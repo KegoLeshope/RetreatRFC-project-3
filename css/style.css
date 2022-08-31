@@ -114,12 +114,12 @@ gallery
   width: 100%;
   padding-bottom: 5px;
   border-radius: 12px;
-  filter: grayscale(75%);
-  transition: 0.3s;
 }
-
-.gallery img:hover{
-  filter: grayscale(0);
+.imgH{
+  transition: .2s ease-in-out;
+}
+.imgH:hover{
+  filter: brightness(75%);
 }
 
 /*
