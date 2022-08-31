@@ -11,6 +11,9 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <!-- Telephone css -->
+    <link rel="stylesheet" href="css/intlTelInput.css">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -84,106 +87,103 @@
 <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="col-lg-7 mb-5 mb-lg-0">
-            <h2 class="center">Personal Details</h2>
-            <div class ="tablereg" >
-                <table class ="center" cellpadding = "20">
-                    <tr>
-                        <td>First Name</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Middle Name</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Last Name</td>
-                        <td><input name="" type="text" /></td>
-                    </tr>
+            <form name="registration" method="POST" netlify honeypot="bot field" data-netlify="true">
+                <p hidden aria-hidden="true">
+                    <label>Don't fill out this form. <input name="bot-field"/></label>
+                </p>
+                <h2 class="center">Personal Details</h2>
+                <div class ="tablereg" >
+                    <table class ="center" cellpadding = "20">
+                        <tr>
+                            <td>First Name</td>
+                            <td><input name="" type="text" required/></td>
+                            <td>Middle Name</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Last Name</td>
+                            <td><input name="" type="text" required/></td>
+                        </tr>
 
-                    <tr>
-                        <td>Age</td>
-                        <td><input name="" type="text" /></td>
-                        <td>ID No.</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Gender</td>
-                        <td><select name="">
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select></td>
-                    </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td><input name="" type="text" onkeypress="isInputNumber(event)"maxlength="2" required/></td>
+                            <td>ID No.</td>
+                            <td><input name="" type="text" onkeypress="isInputNumber(event)" maxlength="13" required/></td>
 
-                    <tr>
-                        <td>Contact</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Email</td>
-                        <td colspan="4"><input name="email" type="text" size="20"></td>
-                    </tr>
-                </table>
-            </div>
-            <br>
-            <br>
-            <br>
+                            <td>Gender</td>
+                            <td><select name="">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Contact</td>
+                            <td><input type="text" id="phone" size="20"  onkeypress="isInputNumber(event)" maxlength="11" required/></td>
+                            <td>Email</td>
+                            <td colspan="4"><input pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+                                                   name="email" type="text" multiple required></td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <br>
+                <br>
 
-            <h2 class="center">Address</h2>
-            <div class ="tablereg" >
-                <table class ="center" cellpadding = "20">
-                    <tr>
-                        <td>Street Name</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Suburb</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Postal Code</td>
-                        <td><input name="" type="text" /></td>
-                    </tr>
-                </table>
-            </div>
+                <h2 class="center">Address</h2>
+                <div class ="tablereg" >
+                    <table class ="center" cellpadding = "20" >
+                        <tr>
+                            <td>Street Name</td>
+                            <td><input name="" type="text" required/></td>
+                            <td>Suburb</td>
+                            <td><input name="" type="text" required/></td>
+                            <td>Postal Code</td>
+                            <td><input name="" type="text" onkeypress="isInputNumber(event)" maxlength="4" required/></td>
+                        </tr>
+                    </table>
+                </div>
 
-            <br>
-            <br>
-            <br>
+                <br>
+                <br>
+                <br>
 
-            <h2 class="center">Emergency Contact Details</h2>
-            <h4 class="center">Person 1</h4>
-            <div class ="tablereg" >
-                <table class ="center" cellpadding = "20">
-                    <tr>
-                        <td>First Name</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Relationship</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Contact</td>
-                        <td><input name="" type="text" /></td>
-                    </tr>
-                </table>
-            </div>
+                <h2 class="center">Emergency Contact Details</h2>
+                <h4 class="center">Person 1</h4>
+                <div class ="tablereg" >
+                    <table class ="center" cellpadding = "20">
+                        <tr>
+                            <td>First Name</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Relationship</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Contact</td>
+                            <td><input name="" type="text" id="phone1" onkeypress="isInputNumber(event)" /></td>
+                        </tr>
+                    </table>
+                </div>
 
-            <br>
+                <br>
 
-            <h4 class="center">Person 2</h4>
-            <div class ="tablereg" >
-                <table class ="center" cellpadding = "20">
-                    <tr>
-                        <td>First Name</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Relationship</td>
-                        <td><input name="" type="text" /></td>
-                        <td>Contact</td>
-                        <td><input name="" type="text" /></td>
-                    </tr>
-                </table>
-            </div>
-            <br>
-            <br>
-            <tr>
-                <td style="text-align: center">
-                    <button type="submit" class="submit">Submit</button>
-                </td>
-
-
-            </tr>
-
-            </table>
+                <h4 class="center">Person 2</h4>
+                <div class ="tablereg" >
+                    <table class ="center" cellpadding = "20">
+                        <tr>
+                            <td>First Name</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Relationship</td>
+                            <td><input name="" type="text" /></td>
+                            <td>Contact</td>
+                            <td><input name="" type="text" id="phone2" onkeypress="isInputNumber(event)"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="submit" >Submit</button>
+            </form>
         </div>
     </div>
 </div>
-</div>
-<!-- Register Start -->
+<!-- Register End -->
 
 
 <!-- Footer Start -->
@@ -194,18 +194,18 @@
                 <a href="home.html" class="navbar-brand">
                     <h1 class="mt-n2 text-uppercase text-white">Retreat RFC</h1>
                 </a>
-                <p class="m-0">Accusam nonumy clita sed rebum kasd eirmod elitr. Ipsum ea lorem at et diam est, tempor rebum ipsum sit ea tempor stet et consetetur dolores. Justo stet diam ipsum lorem vero clita diam</p>
+                <p class="m-0">The purple and white</p>
             </div>
 
         </div>
         <div class="row">
             <div class="col-md-6 mb-5">
                 <h3 class="text-white mb-4">Get In Touch</h3>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Retreat, Cape Town, South Africa</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.18698601074!2d18.466590650614926!3d-34.06472063658962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc418196ef1f43%3A0x336f1294c7d61220!2sRetreat%20Rugby%20Football%20Club!5e0!3m2!1sen!2sza!4v1661852785325!5m2!1sen!2sza" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <p><i class="fa fa-phone-alt mr-2"></i>+27 72 110 3634</p>
                 <p><i class="fa fa-envelope mr-2"></i>retreatrfc@gmail.com</p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
+                    <a class="text-white mr-4" href="https://www.facebook.com/retreatrfc/" target="_blank"><i class="fab fa-2x fa-facebook-f"></i></a>
                 </div>
             </div>
             <div class="col-md-4 mb-5">
@@ -250,8 +250,37 @@
 <script src="../lib/counterup/counterup.min.js"></script>
 <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 
-<!-- Template Javascript -->
 <script src="../js/main.js"></script>
+
+<script src="js/intlTelInput.js"></script>
+<script>
+    function isInputNumber(evt) {
+        var ch = String.fromCharCode(evt.which);
+
+        if(!(/[0-9]/.test(ch))){
+            evt.preventDefault();
+        }
+    }
+</script>
+<script>
+    var input = document.querySelector("#phone");
+    intlTelInput(input,{
+        utilsScript: "js/utils.js"
+    });
+</script>
+<script>
+    var input = document.querySelector("#phone1");
+    intlTelInput(input,{
+        utilsScript: "js/utils.js"
+    });
+</script>
+<script>
+    var input = document.querySelector("#phone2");
+    intlTelInput(input,{
+        utilsScript: "js/utils.js"
+    });
+</script>
+
 </body>
 
 </html>
