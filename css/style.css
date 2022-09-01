@@ -213,6 +213,29 @@ address {
   line-height: inherit;
 }
 
+/*
+fixtures&results
+*/
+
+.table {
+  text-align: left;
+  position: center;
+  border-collapse: collapse;
+  background-color: #f6f6f6;
+}
+td, th {
+  border: 1px solid #999;
+  padding: 20px;
+  align-content: center;
+}
+
+.sub-title{
+  text-align: center;
+}
+.title{
+  text-align: center;
+}
+
 ol,
 ul,
 dl {
